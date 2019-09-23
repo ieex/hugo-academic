@@ -21,7 +21,13 @@
           <div class="col">&nbsp;</div>
         </div>
         <div class="m-2">
-          <span class="badge badge-pill border {{if not .date_end}}exp-fill{{end}}">&nbsp;</span>
+          <span class="badge badge-pill">
+            {{if eq $page.Params.advanced.wg_type "edu"}}
+              <i class="fas fa-graduation-cap"></i>
+            {{else}}
+              <i class="{{if .date_end}}far{{else}}fas{{end}} fa-circle"></i>
+            {{end}}
+          </span>
         </div>
         <div class="row h-50">
           <div class="col {{if lt $idx (sub $exp_len 1)}}border-right{{end}}">&nbsp;</div>
